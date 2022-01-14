@@ -1,0 +1,46 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test:watch": "jest --watchAll",
+    "dev": "ts-node index.ts",
+    "start": "node build/index.js",
+    "db:make-migration": "ts-node scripts/create-migration-file.ts",
+    "db:migrate": "ts-node scripts/migrate-database.ts",
+    "db:rollback": "ts-node scripts/rollback-database.ts",
+    "db:seed": "ts-node scripts/seed-database.ts",
+    "db:make-seed": "ts-node scripts/create-seed-file.ts",
+    "bundle": "rm -rf build && tsc",
+    "build": "yarn --check-files --frozen-lockfile && yarn bundle"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "generate-password": "^1.6.1",
+    "jest": "^27.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.11",
+    "nodemailer": "^6.7.0",
+    "pg": "^8.7.1",
+    "sqlite3": "^5.0.2",
+    "ts-node": "^10.3.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.2",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/nodemailer": "^6.4.4",
+    "@types/uuid": "^8.3.1",
+    "ts-jest": "^27.0.5",
+    "tsc": "^2.0.3",
+    "typescript": "^4.4.3"
+  }
+}
